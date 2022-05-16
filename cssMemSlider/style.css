@@ -7,6 +7,7 @@ body {
     background-color: lightsteelblue;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 .slider-container {
@@ -19,19 +20,70 @@ body {
     overflow: hidden;
 }
 
+input[type="radio"] {
+    display: none;
+  }
+
 .slider-content {
     display: flex;
-    gap: 50px;
     
+    transition: 1s;
 }
 
-.slide {
-    
+
+.slider-radio_label {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 2px solid white;
+}
+
+.slider-radio_label:hover {
+    background-color: burlywood;
+    cursor: pointer;
+    transition: .5s;
 }
 
 .slider-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
+    margin: 20px;
+}
+
+.slider-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+/* #btn1:checked~.first-slide {
+    transform: translateX(-550px);
+} */
+
+#btn2:checked~.slider-content {
+    transform: translateX(-500px);
+}
+
+#btn3:checked~.slider-content {
+    transform: translateX(-1000px);
+}
+
+#btn4:checked~.slider-content {
+    transform: translateX(-1500px);
+}
+
+#btn5:checked~.slider-content {
+    transform: translateX(-2000px);
+}
+
+
+
+#btn1:checked ~.slider-footer .slider-buttons #dot1,
+#btn2:checked ~.slider-footer .slider-buttons #dot2,
+#btn3:checked ~.slider-footer .slider-buttons #dot3,
+#btn4:checked ~.slider-footer .slider-buttons #dot4,
+#btn5:checked ~.slider-footer .slider-buttons #dot5 {
+  background-color: white;
 }
