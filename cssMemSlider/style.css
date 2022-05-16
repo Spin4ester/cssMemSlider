@@ -1,10 +1,14 @@
+:root {
+    --slide-width: 37.9vw
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
 body {
-    background-color: lightsteelblue;
+    background-color: rgb(143, 143, 143);
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -12,11 +16,14 @@ body {
 
 .slider-container {
     margin: 0 auto;
-    margin-top: 50px;
-    width: 500px;
-    height: 600px;
-    background-color: darkslategray;
-    border-radius: 20px;
+    margin-top: 5rem;
+    max-width: 31%;
+    min-width: var(--slide-width);
+    background-color: rgb(48, 46, 65);
+    /* max-width: 500px;
+    max-height: 600px; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 2rem;
     overflow: hidden;
 }
 
@@ -27,70 +34,123 @@ input[type="radio"] {
 .slider-content {
     display: flex;
     transition: 1s;
+    width: var(--slide-width); 
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--slide-width);
+}
+
+.slider-content > img {
+    min-width: var(--slide-width);
 }
 
 .slider-radio_label {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-dot {
     display: inline-block;
-    height: 20px;
-    width: 20px;
-    border: 2px solid white;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.slider-radio_label:hover > .radio-dot {
+    background-color: rgb(252, 143, 0);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.slider-radio_label:active > .radio-dot {
+    background-color: rgb(255, 8, 0);
 }
 
 .slider-radio_label:hover {
-    background-color: burlywood;
     cursor: pointer;
-    transition: .5s;
+    
 }
 
 .slider-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
+    margin: 2rem;
+    gap: 2rem;
 }
 
 .slider-buttons {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 0.5rem;
 }
 
 
 .meme-sub {
     display: none;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
 }
 
 #btn2:checked~.slider-content {
-    transform: translateX(-500px);
+    transform: translateX(-100%);
 }
 
 #btn3:checked~.slider-content {
-    transform: translateX(-1000px);
+    transform: translateX(-200%);
 }
 
 #btn4:checked~.slider-content {
-    transform: translateX(-1500px);
+    transform: translateX(-300%);
 }
 
 #btn5:checked~.slider-content {
-    transform: translateX(-2000px);
+    transform: translateX(-400%);
 }
 
 
-#btn1:checked ~.slider-footer .slider-buttons #dot1,
-#btn2:checked ~.slider-footer .slider-buttons #dot2,
-#btn3:checked ~.slider-footer .slider-buttons #dot3,
-#btn4:checked ~.slider-footer .slider-buttons #dot4,
-#btn5:checked ~.slider-footer .slider-buttons #dot5 {
-  background-color: white;
+#btn1:checked ~.slider-footer .slider-buttons .slider-radio_label #dot1,
+#btn2:checked ~.slider-footer .slider-buttons .slider-radio_label #dot2,
+#btn3:checked ~.slider-footer .slider-buttons .slider-radio_label #dot3,
+#btn4:checked ~.slider-footer .slider-buttons .slider-radio_label #dot4,
+#btn5:checked ~.slider-footer .slider-buttons .slider-radio_label #dot5 {
+  background-color: rgb(0, 238, 175);
 }
+
+@keyframes appear {
+    0% {
+      opacity: 0;
+      transform: translateX(20%);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 
 #btn1:checked ~.slider-footer .slider-text #text1,
 #btn2:checked ~.slider-footer .slider-text #text2,
 #btn3:checked ~.slider-footer .slider-text #text3,
 #btn4:checked ~.slider-footer .slider-text #text4,
 #btn5:checked ~.slider-footer .slider-text #text5 {
+ animation: appear 1s ease-in-out;
   display: inline-block;
 }
+
+
+/* @media screen and (max-width: 1280px) {
+    
+}
+
+@media screen and (max-width: 769px) {
+    
+} */
