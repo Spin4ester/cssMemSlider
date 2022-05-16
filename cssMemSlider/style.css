@@ -18,6 +18,7 @@ body {
     background-color: darkslategray;
     border-radius: 20px;
     overflow: hidden;
+    box-shadow: ;
 }
 
 input[type="radio"] {
@@ -26,10 +27,8 @@ input[type="radio"] {
 
 .slider-content {
     display: flex;
-    
     transition: 1s;
 }
-
 
 .slider-radio_label {
     display: inline-block;
@@ -58,9 +57,11 @@ input[type="radio"] {
 }
 
 
-/* #btn1:checked~.first-slide {
-    transform: translateX(-550px);
-} */
+.meme-sub {
+    display: none;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: aliceblue;
+}
 
 #btn2:checked~.slider-content {
     transform: translateX(-500px);
@@ -79,11 +80,18 @@ input[type="radio"] {
 }
 
 
-
 #btn1:checked ~.slider-footer .slider-buttons #dot1,
 #btn2:checked ~.slider-footer .slider-buttons #dot2,
 #btn3:checked ~.slider-footer .slider-buttons #dot3,
 #btn4:checked ~.slider-footer .slider-buttons #dot4,
 #btn5:checked ~.slider-footer .slider-buttons #dot5 {
   background-color: white;
+}
+
+#btn1:checked ~.slider-footer .slider-text #text1,
+#btn2:checked ~.slider-footer .slider-text #text2,
+#btn3:checked ~.slider-footer .slider-text #text3,
+#btn4:checked ~.slider-footer .slider-text #text4,
+#btn5:checked ~.slider-footer .slider-text #text5 {
+  display: inline-block;
 }
