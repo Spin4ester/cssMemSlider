@@ -149,12 +149,10 @@ input[type="radio"] {
 }
 
 
- @media screen and (max-width: 1320px) {
+ @media screen and (max-width: 1368px) {
     :root {
         --slide-width: 50vw;
       }
-
-     
 
       .meme-sub {
         font-size: 1.2rem;
@@ -165,7 +163,6 @@ input[type="radio"] {
 @media screen and (max-width: 1000px) {
     :root {
         --slide-width: 70vw;
-        
       }
 
       .meme-sub {
@@ -203,7 +200,3 @@ input[type="radio"] {
       }
 
 }
-/*
-@media screen and (max-width: 769px) {
-    
-} */
